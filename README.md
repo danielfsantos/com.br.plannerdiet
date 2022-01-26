@@ -1,1 +1,1 @@
-# com..br.plannerdiet
+# com.br.plannerdiet
