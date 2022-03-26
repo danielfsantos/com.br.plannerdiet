@@ -1,0 +1,29 @@
+package com.br.plannerdiet.plannerdiet.dto;
+
+import org.springframework.data.domain.Page;
+
+import com.br.plannerdiet.plannerdiet.model.Ingredientes;
+
+public class IngredientesModelDto {
+	private String nome;
+	
+	private Long id;
+
+	public IngredientesModelDto(Ingredientes ingredientes) {
+		this.nome = ingredientes.getNome();
+		this.id = ingredientes.getId();
+	}
+
+	public String getNome() {
+		return nome;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public static Page<IngredientesModelDto> converter(Page<Ingredientes> ingredientes) {
+		return ingredientes.map(IngredientesModelDto::new);
+	}
+
+}
