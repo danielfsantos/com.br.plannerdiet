@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.controller;
+package com.br.plannerdiet.plannerdiet.application.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -21,13 +21,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.br.plannerdiet.plannerdiet.dto.DetalhesReceitaModelDto;
-import com.br.plannerdiet.plannerdiet.dto.ReceitaModelDto;
-import com.br.plannerdiet.plannerdiet.dto.ReceitasSemanaisDto;
-import com.br.plannerdiet.plannerdiet.form.ReceitaModelForm;
-import com.br.plannerdiet.plannerdiet.form.atualizacao.AtualizacaoReceitaForm;
-import com.br.plannerdiet.plannerdiet.model.Receita;
-import com.br.plannerdiet.plannerdiet.repository.ReceitaRepository;
+import com.br.plannerdiet.plannerdiet.domain.dto.DetalhesReceitaModelDto;
+import com.br.plannerdiet.plannerdiet.domain.dto.ReceitaModelDto;
+import com.br.plannerdiet.plannerdiet.domain.dto.ReceitasSemanaisDto;
+import com.br.plannerdiet.plannerdiet.domain.form.ReceitaModelForm;
+import com.br.plannerdiet.plannerdiet.domain.form.atualizacao.AtualizacaoReceitaForm;
+import com.br.plannerdiet.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.plannerdiet.infra.repository.ReceitaRepository;
 
 @RestController
 @RequestMapping("/receita")

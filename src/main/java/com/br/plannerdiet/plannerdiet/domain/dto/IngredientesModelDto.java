@@ -1,8 +1,8 @@
-package com.br.plannerdiet.plannerdiet.dto;
+package com.br.plannerdiet.plannerdiet.domain.dto;
 
 import org.springframework.data.domain.Page;
 
-import com.br.plannerdiet.plannerdiet.model.Ingredientes;
+import com.br.plannerdiet.plannerdiet.domain.model.Ingredientes;
 
 public class IngredientesModelDto {
 	private String nome;

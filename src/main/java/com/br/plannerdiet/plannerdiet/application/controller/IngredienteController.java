@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.controller;
+package com.br.plannerdiet.plannerdiet.application.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.br.plannerdiet.plannerdiet.dto.IngredientesModelDto;
-import com.br.plannerdiet.plannerdiet.form.IngredientesModelForm;
-import com.br.plannerdiet.plannerdiet.model.Ingredientes;
-import com.br.plannerdiet.plannerdiet.repository.IngredientesRepository;
+import com.br.plannerdiet.plannerdiet.domain.dto.IngredientesModelDto;
+import com.br.plannerdiet.plannerdiet.domain.form.IngredientesModelForm;
+import com.br.plannerdiet.plannerdiet.domain.model.Ingredientes;
+import com.br.plannerdiet.plannerdiet.infra.repository.IngredientesRepository;
 
 @RestController
 @RequestMapping("/ingrediente")

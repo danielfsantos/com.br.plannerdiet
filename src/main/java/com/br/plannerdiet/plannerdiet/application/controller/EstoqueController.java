@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.controller;
+package com.br.plannerdiet.plannerdiet.application.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

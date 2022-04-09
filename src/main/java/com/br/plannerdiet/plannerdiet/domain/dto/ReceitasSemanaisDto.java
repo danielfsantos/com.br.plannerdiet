@@ -1,8 +1,8 @@
-package com.br.plannerdiet.plannerdiet.dto;
+package com.br.plannerdiet.plannerdiet.domain.dto;
 
 import java.util.List;
 
-import com.br.plannerdiet.plannerdiet.model.Receita;
+import com.br.plannerdiet.plannerdiet.domain.model.Receita;
 
 public class ReceitasSemanaisDto {
 

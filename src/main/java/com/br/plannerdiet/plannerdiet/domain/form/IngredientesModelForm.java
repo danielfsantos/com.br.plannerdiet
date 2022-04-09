@@ -1,6 +1,6 @@
-package com.br.plannerdiet.plannerdiet.form;
+package com.br.plannerdiet.plannerdiet.domain.form;
 
-import com.br.plannerdiet.plannerdiet.model.Ingredientes;
+import com.br.plannerdiet.plannerdiet.domain.model.Ingredientes;
 
 public class IngredientesModelForm {
 			

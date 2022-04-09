@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.model;
+package com.br.plannerdiet.plannerdiet.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

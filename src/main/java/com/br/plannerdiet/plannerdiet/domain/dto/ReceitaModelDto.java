@@ -1,12 +1,8 @@
-package com.br.plannerdiet.plannerdiet.dto;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+package com.br.plannerdiet.plannerdiet.domain.dto;
 
 import org.springframework.data.domain.Page;
 
-import com.br.plannerdiet.plannerdiet.model.Receita;
+import com.br.plannerdiet.plannerdiet.domain.model.Receita;
 
 public class ReceitaModelDto {
 
