@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.application.controller;
+package com.br.plannerdiet.application.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -15,16 +15,17 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.br.plannerdiet.plannerdiet.domain.dto.IngredientesModelDto;
-import com.br.plannerdiet.plannerdiet.domain.form.IngredientesModelForm;
-import com.br.plannerdiet.plannerdiet.domain.model.Ingredientes;
-import com.br.plannerdiet.plannerdiet.infra.repository.IngredientesRepository;
+import com.br.plannerdiet.domain.dto.IngredientesModelDto;
+import com.br.plannerdiet.domain.form.IngredientesModelForm;
+import com.br.plannerdiet.domain.model.Ingredientes;
+import com.br.plannerdiet.infra.repository.IngredientesRepository;
 
 @RestController
 @RequestMapping("/ingrediente")
@@ -63,6 +64,19 @@ public class IngredienteController {
 			return ResponseEntity.ok().build();
 		}
 		return ResponseEntity.notFound().build();
+	}
+
+	@PutMapping("/{Id}")
+	@Transactional
+	public ResponseEntity<IngredientesModelDto> atualizar(@PathVariable Long Id,
+			@RequestBody IngredientesModelForm ingrendientesForm) {
+		Optional<Ingredientes> option = ingredientesRepository.findById(Id);
+		if (option.isPresent()) {
+			Ingredientes ingredientes = ingrendientesForm.atualizar(Id, ingredientesRepository);
+			return ResponseEntity.ok(new IngredientesModelDto(ingredientes));
+		}
+		return ResponseEntity.notFound().build();
+
 	}
 
 }

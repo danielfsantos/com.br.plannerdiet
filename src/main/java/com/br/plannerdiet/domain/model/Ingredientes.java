@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.domain.model;
+package com.br.plannerdiet.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,19 +16,17 @@ public class Ingredientes {
 	@Column(nullable = false)
 	private String nome;
 
-		
-	public Ingredientes(String nome,Long id) {
+	public Ingredientes(String nome, Long id) {
 		this.nome = nome;
 		this.Id = id;
 	}
-	
-	
-	public 	Ingredientes(String nome) {
+
+	public Ingredientes(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public Ingredientes() {
-		
+
 	}
 
 	public Long getId() {
@@ -46,6 +44,5 @@ public class Ingredientes {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 }

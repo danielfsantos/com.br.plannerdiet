@@ -1,10 +1,10 @@
-package com.br.plannerdiet.plannerdiet.infra.repository;
+package com.br.plannerdiet.infra.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.br.plannerdiet.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.Receita;
 
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
 

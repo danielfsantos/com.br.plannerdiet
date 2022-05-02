@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.domain.model;
+package com.br.plannerdiet.domain.model;
 
 import java.util.List;
 

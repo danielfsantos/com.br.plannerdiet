@@ -1,10 +1,10 @@
-package com.br.plannerdiet.plannerdiet.domain.form;
+package com.br.plannerdiet.domain.form;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.br.plannerdiet.plannerdiet.domain.model.Ingredientes;
-import com.br.plannerdiet.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.Ingredientes;
+import com.br.plannerdiet.domain.model.Receita;
 
 public class ReceitaModelForm {
 	private String nome;

@@ -1,10 +1,10 @@
-package com.br.plannerdiet.plannerdiet.domain.dto;
+package com.br.plannerdiet.domain.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.br.plannerdiet.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.Receita;
 
 public class DetalhesReceitaModelDto {
 	private String nome;

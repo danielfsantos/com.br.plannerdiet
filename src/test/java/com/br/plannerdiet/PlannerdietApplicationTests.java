@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet;
+package com.br.plannerdiet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

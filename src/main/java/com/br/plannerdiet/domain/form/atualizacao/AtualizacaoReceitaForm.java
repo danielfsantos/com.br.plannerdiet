@@ -1,4 +1,4 @@
-package com.br.plannerdiet.plannerdiet.domain.form.atualizacao;
+package com.br.plannerdiet.domain.form.atualizacao;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.br.plannerdiet.plannerdiet.domain.model.Ingredientes;
-import com.br.plannerdiet.plannerdiet.domain.model.Receita;
-import com.br.plannerdiet.plannerdiet.infra.repository.ReceitaRepository;
+import com.br.plannerdiet.domain.model.Ingredientes;
+import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.infra.repository.ReceitaRepository;
 
 public class AtualizacaoReceitaForm {
 	@NotNull
