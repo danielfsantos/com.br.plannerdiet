@@ -2,7 +2,7 @@ package com.br.plannerdiet.domain.dto;
 
 import org.springframework.data.domain.Page;
 
-import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.receita.Receita;
 
 public class ReceitaModelDto {
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.br.plannerdiet.domain.model.Ingredientes;
-import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.receita.Receita;
 
 public class ReceitaModelForm {
 	private String nome;

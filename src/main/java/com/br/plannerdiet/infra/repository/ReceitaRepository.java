@@ -4,7 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.receita.Receita;
 
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
 

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import com.br.plannerdiet.domain.model.Ingredientes;
-import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.receita.Receita;
 import com.br.plannerdiet.infra.repository.ReceitaRepository;
 
 public class AtualizacaoReceitaForm {

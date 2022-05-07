@@ -1,4 +1,4 @@
-package com.br.plannerdiet.application.controller;
+package com.br.plannerdiet.application.controller.receita;
 
 import java.net.URI;
 
@@ -6,28 +6,24 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import com.br.plannerdiet.domain.form.ReceitaSemanalForm;
+import com.br.plannerdiet.domain.model.receita.ReceitaSemanal;
+import com.br.plannerdiet.infra.repository.ReceitaSemanalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.br.plannerdiet.domain.dto.DetalhesReceitaModelDto;
 import com.br.plannerdiet.domain.dto.ReceitaModelDto;
-import com.br.plannerdiet.domain.dto.ReceitasSemanaisDto;
+import com.br.plannerdiet.domain.dto.ReceitaSemanalDto;
 import com.br.plannerdiet.domain.form.ReceitaModelForm;
 import com.br.plannerdiet.domain.form.atualizacao.AtualizacaoReceitaForm;
-import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.receita.Receita;
 import com.br.plannerdiet.infra.repository.ReceitaRepository;
 
 
@@ -44,6 +40,9 @@ public class ReceitaController {
 
 	@Autowired
 	private ReceitaRepository receitaRepository;
+
+	@Autowired
+	private ReceitaSemanalRepository receitaSemanalRepository;
 
 	@PostMapping
 	public ResponseEntity<ReceitaModelDto> salvar(@RequestBody ReceitaModelForm receitaForm,UriComponentsBuilder uriBuilder) {
@@ -87,8 +86,18 @@ public class ReceitaController {
 	}
 
 	@GetMapping("/semanal")
-	public ResponseEntity<ReceitasSemanaisDto> listaDeReceitas(@RequestBody ReceitasSemanaisDto receitasSemanais) {
-		return null;
+	public Page<ReceitaSemanalDto> listaDeReceitassemanais(@PageableDefault(direction = Direction.ASC, size = 10, page = 0) Pageable page) {
+			Page<ReceitaSemanal> receitaSemanal = receitaSemanalRepository.findAll(page);
+			return ReceitaSemanalDto.converter(receitaSemanal);
+	}
+
+
+	@PostMapping("/salvar-semanal")
+	public ResponseEntity<ReceitaSemanalDto> salvarSemanal(@RequestBody ReceitaSemanalForm receitaSemanalForm, UriComponentsBuilder uriBuilder){
+		ReceitaSemanal receitasSemanais = receitaSemanalForm.converter();
+		receitaSemanalRepository.save(receitasSemanais);
+		URI uri = uriBuilder.path("/receita/salvar-semanal/{id}").buildAndExpand(receitasSemanais.getId()).toUri();
+		return ResponseEntity.created(uri).body(new ReceitaSemanalDto(receitasSemanais));
 
 	}
 

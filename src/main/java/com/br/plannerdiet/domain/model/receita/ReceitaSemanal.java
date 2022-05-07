@@ -1,11 +1,11 @@
-package com.br.plannerdiet.domain.model;
+package com.br.plannerdiet.domain.model.receita;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Semanal {
+public class ReceitaSemanal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,20 @@ public class Semanal {
     @Temporal(TemporalType.DATE)
     private Date dataFim;
 
-    @OneToMany
+    @ManyToMany
     private List<Receita> receitas;
 
+
+
+    public ReceitaSemanal() {
+
+    }
+
+    public ReceitaSemanal(Date dataInicio, Date dataFim, List<Receita> receitas) {
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.receitas = receitas;
+    }
 
     public Long getId() {
         return id;

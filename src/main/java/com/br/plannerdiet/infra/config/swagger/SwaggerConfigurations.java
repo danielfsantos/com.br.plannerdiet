@@ -7,7 +7,7 @@ import com.br.plannerdiet.domain.form.IngredientesModelForm;
 import com.br.plannerdiet.domain.form.ReceitaModelForm;
 import com.br.plannerdiet.domain.form.atualizacao.AtualizacaoReceitaForm;
 import com.br.plannerdiet.domain.model.Ingredientes;
-import com.br.plannerdiet.domain.model.Receita;
+import com.br.plannerdiet.domain.model.receita.Receita;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;

@@ -1,4 +1,6 @@
-package com.br.plannerdiet.domain.model;
+package com.br.plannerdiet.domain.model.receita;
+
+import com.br.plannerdiet.domain.model.Ingredientes;
 
 import java.util.List;
 
@@ -7,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
@@ -24,7 +27,7 @@ public class Receita {
 	@Size(max = 1337)
 	private String mododepreparo;
 
-	@OneToMany
+	@ManyToMany
 	private List<Ingredientes> ingredientes;
 
 	public Receita() {
